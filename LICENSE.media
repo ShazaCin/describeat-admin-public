@@ -1,0 +1,37 @@
+# LICENSE — Media and Audio Content
+
+> **This document does NOT grant any rights to media content. It restricts them.**
+
+The source code in this repository is licensed under the GNU Affero General Public License v3.0 (AGPLv3) — see the [LICENSE](./LICENSE) file. The admin portal handles content management (uploading titles, managing AD tracks, sending notifications), but **no audio description tracks, reference audio, fingerprint data, or media content are distributed with this source code.**
+
+---
+
+## What is NOT included in this repository
+
+| Asset type | In this repo? | Notes |
+|------------|---------------|-------|
+| AD track audio files | No | Not redistributed. Uploaded via the admin portal to your own storage. |
+| Reference audio (movie/TV soundtracks) | No | Copyrighted by the original rights holders. Not redistributed. |
+| Fingerprint hash databases | No | Generated from reference audio. You must generate your own. |
+| Poster images / stills | No | Copyrighted by the original rights holders. Not redistributed. |
+| Title metadata (real titles, actors, etc.) | No | The admin portal manages your catalogue. No real metadata is included. |
+
+---
+
+## Your responsibilities when deploying DescribeAT
+
+If you deploy the admin portal, you are responsible for:
+
+1. **Sourcing audio description content** — either producing your own AD tracks or licensing them from content providers under whatever licenses apply in your jurisdiction.
+2. **Complying with copyright law** — audio description tracks are derivative works of the original content. Ensure you have the legal right to produce and distribute AD tracks.
+3. **Configuring your own storage** — all media content must be hosted on your own infrastructure (S3, CDN, etc.). The admin portal uploads to your configured S3 bucket.
+4. **Managing your own Firebase project** — push notifications require a Firebase project with Cloud Messaging enabled. Your Firebase credentials are your responsibility.
+
+---
+
+## Summary
+
+- **Code:** AGPLv3 — open source, modify and distribute freely under copyleft terms
+- **Media:** All rights reserved by their respective owners — NOT distributed with this code
+
+For questions about licensing, contact the repository maintainers.
