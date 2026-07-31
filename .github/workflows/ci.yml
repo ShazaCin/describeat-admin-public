@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create aws-exports stub
+        run: cp src/aws-exports.example.ts src/aws-exports.ts
+
       - name: Lint
         continue-on-error: true
         run: npm run lint --if-present
