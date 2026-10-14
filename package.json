@@ -1,7 +1,7 @@
 {
   "name": "shazacin-admin-portal",
   "private": true,
-"version": "1.11.2",
+  "version": "1.11.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -35,10 +35,10 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.25.0",
     "jsdom": "^26.0.0",
-    "postcss": "^8.5.0",
+    "postcss": "^8.5.23",
     "tailwindcss": "^4.1.0",
     "typescript": "~5.8.0",
-    "vite": "^6.3.0",
+    "vite": "^6.4.3",
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^5.0.0",
     "workbox-precaching": "^7.3.0",
