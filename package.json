@@ -33,7 +33,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^4.4.0",
     "autoprefixer": "^10.6.1",
-    "eslint": "^9.25.0",
+    "eslint": "^10.13.0",
     "jsdom": "^26.0.0",
     "postcss": "^8.5.30",
     "tailwindcss": "^4.1.0",
