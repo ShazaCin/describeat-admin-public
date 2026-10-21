@@ -17,9 +17,8 @@
     "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
     "types": ["node"],
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src", "vite-env.d.ts"]
