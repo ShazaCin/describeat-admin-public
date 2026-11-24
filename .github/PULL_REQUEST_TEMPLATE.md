@@ -65,7 +65,8 @@ Describe how to roll this change back if it ships and breaks something.
 - [ ] My changes don't include any real production data, account IDs, secrets, or signer identifiers
 - [ ] I have verified all links still resolve
 - [ ] I have verified all example values are placeholders (e.g. `example.com`, `us-east-1_XXXXXXXXX`, `<your-cognito-pool-id>`)
-- [ ] I have run `npm run lint` locally and it passes
+- [ ] It does one thing, and is small enough to review
+- [ ] No tests were removed or switched off (no `.skip`, `.only` or `.todo`)
 - [ ] I have run `npm run test:run` locally and it passes
 - [ ] I have run `npm run build` locally and it succeeds
 - [ ] I have run accessibility checks (keyboard nav, screen reader) on any UI change
@@ -81,6 +82,13 @@ How did you test the change? Include:
 - Whether you tested with the offline / service-worker flow (if applicable)
 - Whether you tested with screen reader / keyboard-only (for UI changes)
 - Whether you tested against a local AppSync or only against placeholders
+
+## AI
+
+- [ ] I used AI to write or change this.
+
+<!-- If you did: which tool, and what you checked yourself. AI-assisted pull
+requests are welcome, but you're responsible for every line. -->
 
 ## Screenshots
 
