@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -30,20 +30,17 @@ jobs:
       - name: Create aws-exports stub
         run: cp src/aws-exports.example.ts src/aws-exports.ts
 
+      # Not enforced yet: the repo has no ESLint configuration file (eslint.config.*), so lint cannot run.
       - name: Lint
         continue-on-error: true
         run: npm run lint --if-present
 
-      - name: Type-check
-        continue-on-error: true
-        run: npm run type-check --if-present
-
       - name: Test
-        continue-on-error: true
-        run: npm test --if-present
+        run: npm run test:run -- --passWithNoTests
 
+      # The build runs `tsc -b` first, so it is also the strict type check.
       - name: Build
-        run: npm run build --if-present
+        run: npm run build
 
   secret-scan:
     name: Secret Scanning (gitleaks)
