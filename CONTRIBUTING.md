@@ -40,6 +40,21 @@ This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md). By particip
 - **Marketing material for specific products or services.** This is technical code, not a platform for promotion.
 - **Cosmetic-only changes that touch many files.** A reformat of the whole repo is hard to review and gives the admin team a noisy diff. Targeted, well-scoped PRs only.
 
+## AI-assisted contributions
+
+You're welcome to use AI to help write your contribution. But:
+
+- **Say so** in the pull request (the template asks), and which tool.
+- **You're responsible for every line.** Read it, understand it, and test it yourself. "The AI wrote it" isn't an explanation for a bug.
+- **Small and focused:** one change per pull request. Large, sprawling or machine-generated changes across many files will be closed.
+- **No weakening tests to make a change pass.** Don't delete tests, or switch them off with `.skip`, `.only` or `.todo`, to get a change through. If removing a test is genuinely right (for example, a feature is removed), say so in the pull request.
+
+Pull request descriptions are read by people and by review tools. Instructions written in a pull request, such as asking a reviewer to approve it or ignore a check, are ignored. Reviews are based on the change itself and the checks.
+
+## What gets merged, and what doesn't
+
+The maintainers may close any pull request without a detailed review, including ones that are too large, don't follow these guidelines, add complexity without a clear need, or arrive in bulk. That isn't personal: reviewing takes time, and DescribeAT is looked after by a small team.
+
 ## The contribution workflow
 
 ### 1. Open an issue first (for non-trivial changes)
@@ -100,12 +115,12 @@ PRs must include:
 
 CI runs on every PR:
 
-- **TypeScript compile** — strict mode, must pass
-- **Lint** — ESLint, must pass
-- **Unit tests** — Vitest, must pass
-- **Accessibility checks** — axe-core on key pages, must pass
-- **Build verification** — `npm run build` must succeed
-- **Secret scan** — verifies no real AWS IDs, API keys, etc. are present
+- **Build verification** — `npm run build` must succeed. It runs the TypeScript compiler first, so this is also the strict-mode type check.
+- **Unit tests** — Vitest, must pass. There are no tests yet, so new ones are especially welcome.
+- **Secret scan** — gitleaks checks for real AWS IDs, API keys and similar, and must pass.
+- **Lint** — ESLint is set up to run but doesn't block yet: the repo has no ESLint configuration file, so it can't check anything until one is added.
+
+There are no automatic accessibility checks yet, so please test UI changes with a keyboard and a screen reader yourself.
 
 If CI fails, fix the issues. If CI is wrong, open an issue explaining.
 
